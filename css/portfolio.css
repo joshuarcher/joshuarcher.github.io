@@ -1,0 +1,51 @@
+/* . means class */
+/*   # means id  */
+/* tag is html tag */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  border-top: solid 8px #F8F8F8;
+}
+
+.nav {
+  margin-top: 12px;
+  margin-left: 10%;
+}
+
+.nav-item {
+  display: inline;
+  list-style: none;
+  margin-right: 12px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #73C990;
+}
+
+h1 {
+  color: blue;
+}
+
+body {
+  background-color: #484C56;
+  color: #F8F8F8;
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #F8F8F8;
+}
+
+img.resize {
+  max-width: 50%;
+  max-height: 50%;
+}
