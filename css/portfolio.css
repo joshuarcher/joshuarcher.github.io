@@ -1,14 +1,24 @@
 /* . means class */
 /*   # means id  */
 /* tag is html tag */
+body {
+  background-color: #484C56;
+  color: #F8F8F8;
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 * {
   margin: 0;
   padding: 0;
 }
 
+.main-wrapper {
+  min-height: calc(100vh - 126px);
+}
+
 .header {
   border-top: solid 8px #F8F8F8;
+  margin-bottom: 20px;
 }
 
 .nav {
@@ -23,29 +33,123 @@
   text-align: center;
 }
 
-a {
+header a {
+  color: #F8F8F8;
   text-decoration: none;
 }
 
-a:hover {
+header a:hover {
   color: #73C990;
 }
 
-h1 {
-  color: blue;
-}
-
-body {
-  background-color: #484C56;
+.title {
   color: #F8F8F8;
-  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-a {
+.main {
+  font-size: 78px;
+}
+
+.sub {
+  font-size: 44px;
+}
+
+@media (min-width: 767px) and (max-width: 1080px) {
+  .main {
+    font-size: 78px;
+  }
+
+  .sub {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main {
+    font-size: 64px;
+  }
+
+  .sub {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 481px) {
+  .main {
+    font-size: 39px;
+  }
+  .sub {
+    font-size: 22px;
+  }
+}
+
+.footer-sub {
+  font-size: 30px;
+}
+
+.button {
+  border: solid 2px #73C990;
+  padding: 6px 18px;
+  color: #73C990;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.button:hover {
+  background-color: #73C990;
   color: #F8F8F8;
+  cursor: pointer;
 }
 
-img.resize {
-  max-width: 50%;
-  max-height: 50%;
+.image {
+  margin-bottom: -43px;
+  max-width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.img-wrapper {
+  width: 60%;
+}
+
+.titles {
+  margin-bottom: -74px;
+  z-index: 1;
+}
+
+/* shouldiprefix.com */
+.flex {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.about {
+  width: 100%;
+}
+
+.line {
+  border-top: solid 2px #F8F8F8;
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5%;
 }

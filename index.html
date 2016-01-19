@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <title>Joshua Archer</title>
@@ -6,27 +7,45 @@
   </head>
 
   <body>
-    <header class="header">
-      <nav>
-        <ul class='nav'>
-          <li class='nav-item'><a href="./index.html">Home</a></li>
-          <li class='nav-item'><a href="./gallery.html">Gallery</a></li>
-          <li class='nav-item'><a href="./contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class='main-wrapper'>
+      <header class='header'>
+        <nav>
+          <ul class='nav'>
+            <li class='nav-item'><a href="./index.html">Home</a></li>
+            <li class='nav-item'><a href="./gallery.html">Gallery</a></li>
+            <li class='nav-item'><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <section>
-      <img src="https://goo.gl/RG3GtK"/>
-      <img class="resize" src="./zQcuNFJ.jpg"/>
-      <h1>Hey I'm Josh</h1>
-      <h2>Always be exploring</h2>
-    </section>
+      <div class='flex column'>
+        <section class='flex column'>
+          <div class='flex column titles'>
+            <h1 class='main title'>Hey I'm Josh</h1>
+            <h2 class='sub title'>Always be exploring</h2>
+          </div>
+          <div class='flex column'>
+            <div class='img-wrapper flex column'>
+              <img class='image circle' src='./yosemite.jpg'/>
+            </div>
+            <img src="https://goo.gl/RG3GtK"/>
+          </div>
+        </section>
+      </div>
+    </div> <!--end of main-wrapper-->
 
-    <footer>
-      <h3>About</h3>
-      <a href="./resume-jarch-demoday.pdf" download="JoshResume">Download my Resume</a>
+    <footer class='flex column footer'>
+      <div class='about flex'>
+        <div class='line'></div>
+        <h3 class='title footer-sub'>About</h3>
+        <div class='line'></div>
+      </div>
+      <a class='button' href="./resume-jarch-demoday.pdf" download="JoshResume">Download my Resume</a>
     </footer>
 
   </body>
 </html>
+<!-- position absolute
+  width
+  with top padding 100
+  webkit transform -->
