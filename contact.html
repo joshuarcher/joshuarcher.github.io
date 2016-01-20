@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Josh's Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/portfolio.css">
+    <link rel="stylesheet" type="text/css" href="./css/sf-font.css">
+  </head>
+
+  <body>
+    <header class='header'>
+      <nav>
+        <ul class='nav'>
+          <li class='nav-item'><a href="./index.html">Home</a></li>
+          <li class='nav-item'><a href="./gallery.html">Gallery</a></li>
+          <li class='nav-item'><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="flex column">
+      <h2 class='sub title'>message me!</h2>
+      <form id="form-id" class="flex column former">
+        <input class="email input" type='email' placeholder="your email :)"/>
+        <textarea class="message input" rows="10" cols="50" placeholder="write something meaningful here :)" required></textarea>
+        <input type="hidden" name="_subject" value="New Email from Personal Website" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <button class="button" type="submit">SEND</button>
+      </form>
+    </section>
+
+    <script src="./vendor/jquery-1.12.0.min.js"></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
