@@ -14,6 +14,7 @@ body {
 
 .main-wrapper {
   min-height: calc(100vh - 126px);
+  margin-bottom: 20px;
 }
 
 .header {
@@ -49,14 +50,14 @@ header a:hover {
 }
 
 .main {
-  font-size: 78px;
+  font-size: 88px;
 }
 
 .sub {
-  font-size: 44px;
+  font-size: 50px;
 }
 
-@media (min-width: 767px) and (max-width: 1080px) {
+@media (min-width: 767px) and (max-width: 992px) {
   .main {
     font-size: 78px;
   }
@@ -119,6 +120,24 @@ header a:hover {
   width: 60%;
 }
 
+@media (max-width: 481px) {
+  .img-wrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 630) {
+  .img-wrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 630px) and (max-width: 767px) {
+  .img-wrapper {
+    width: 65%;
+  }
+}
+
 .titles {
   margin-bottom: -74px;
   z-index: 1;
@@ -146,6 +165,12 @@ header a:hover {
   width: 100%;
   margin-left: 2%;
   margin-right: 2%;
+}
+
+@media (max-width: 481px) {
+  .line {
+    width: 35%;
+  }
 }
 
 .footer {
