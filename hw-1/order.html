@@ -18,7 +18,7 @@
 
     <hr/>
 
-    <form action="" method="post" border="1">
+    <form action="" method="post">
 
         <fieldset>
             <legend>Customer Information</legend>
@@ -40,19 +40,76 @@
                 <input type="radio" name="howboutus" value="comm" />Commercial
                 <input type="radio" name="howboutus" value="mag" />Magazine
                 <input type="radio" name="howboutus" value="other" />Other<br/>
-                <input type="checkbox" name="send-emails" checked/>Send me emails about future products.
+                <input type="checkbox" name="send-emails" />Send me emails about future products.
             </p>
+
+            <div>
+                <table  width="600px" border="2">
+                    <caption>Product List</caption>
+                    <tr>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>QTY</th>
+                    </tr>
+                    <tr>
+                        <td>Classic</td>
+                        <td>5-year French oak 750mL</td>
+                        <td>$25</td>
+                        <th><input type="text" name="q-classic"/></th>
+                    </tr>
+                    <tr>
+                        <td>Refined &amp; Rye</td>
+                        <td>7-year Kentucky 750mL</td>
+                        <td>$30</td>
+                        <th><input type="text" name="q-refined"/></th>
+                    </tr>
+                    <tr>
+                        <td>Tasty</td>
+                        <td>10-year California oak 750mL</td>
+                        <td>$35</td>
+                        <th><input type="text" name="q-tasty"/></th>
+                    </tr>
+                    <tr>
+                        <td>Barrel table</td>
+                        <td>Recycled Bourbon barrel coffee table</td>
+                        <td>$35</td>
+                        <th><input type="text" name="q-table"/></th>
+                    </tr>
+                    <tr>
+                        <td>Barrel wall art</td>
+                        <td>Recycled cask head</td>
+                        <td>$15</td>
+                        <th><input type="text" name="q-art"/></th>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div>
+                Select a credit card.
+                <select name="credit-card">
+                    <optgroup label="Real credit">
+                        <option value="visa">Visa</option>
+                        <option value="master">Mastercard</option>
+                    </optgroup>
+                    <optgroup label="Cryptocurrencies">
+                        <option value="btc">BTC</option>
+                        <option value="eth">ETH</option>
+                    </optgroup>
+                </select>
+            </div>
 
         </fieldset>
 
-        <h2>Order Information</h2>
 
 
 
+        <fieldset>
+            <input type="reset"/>
+            <input type="submit" value="Submit"/>
+        </fieldset>
 
-
-        <input type="reset"/>
-        <input type="submit" value="Submit"/>
     </form>
 
     <hr/>
