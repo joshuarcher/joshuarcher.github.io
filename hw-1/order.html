@@ -18,14 +18,35 @@
 
     <hr/>
 
-    <form action="" method="put" border="1">
+    <form action="" method="post" border="1">
 
-        <h2>Customer Information</h2>
-        Name: <input type="text"/>
-        Street: <input type="text"/>
-        City: <input type="text"/>
-        State: <input type="text"/>
-        Zipcode: <input type="text"/>
+        <fieldset>
+            <legend>Customer Information</legend>
+            <p>
+                Name: <input type="text" name="name"/><br/>
+                Street: <input type="text" name="street"/><br/>
+                City: <input type="text" name="city"/><br/>
+                State: <input type="text" name="state"/><br/>
+                Zipcode: <input type="text" name="zipcode"/><br/><br/>
+            </p>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Order Information</legend>
+
+            <p>
+                How did you find out about us?
+                <input type="radio" name="howboutus" value="comm" />Commercial
+                <input type="radio" name="howboutus" value="mag" />Magazine
+                <input type="radio" name="howboutus" value="other" />Other<br/>
+                <input type="checkbox" name="send-emails" checked/>Send me emails about future products.
+            </p>
+
+        </fieldset>
+
+        <h2>Order Information</h2>
+
 
 
 
