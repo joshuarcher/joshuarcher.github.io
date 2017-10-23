@@ -1,0 +1,172 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  color: #262228;
+  background-color: #FDFDFD;
+}
+
+h1 {
+  font-size: 140%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+#main_container {
+  width: 900px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#header {
+  height: 120px;
+  background-color: #FECE00;
+}
+
+#header #logo {
+  width: 100%;
+  text-align: center;
+}
+
+#navbar {
+  margin: 0;
+  padding: 0;
+  padding-left: 10%;
+}
+
+#navbar li {
+  list-style: none;
+  float: left;
+  padding-right: 5px;
+  background-color: #FECE00; /*yellow*/
+  border-bottom: 1px solid white;
+  width: 100px;
+  text-align: center;
+}
+
+#navbar li:hover {
+  background-color: #007849; /*green*/
+}
+
+#navbar a {
+  width: 100%;
+  color: #0375B4; /*blue*/
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  color: #FECE00;
+}
+
+#navbar li ul {
+  display: none;
+}
+
+#navbar li:hover ul {
+  display: block;
+  position: absolute;
+  padding: 0;
+}
+
+#navbar li:hover li {
+  float: none; /* this makes the list items fall in a row vertically. otherwise they were floated left.. */
+}
+
+#sidebar {
+  background-color: #007849;
+  float: left;
+  width: 20%;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 800px;
+}
+
+#sidebar .sidebar-section {
+  padding-bottom: 20px;
+  padding-left: 5px;
+}
+
+#sidebar .sidebar-section a {
+  color: #FFFFFF;
+}
+
+#sidebar .sidebar-section h5 {
+  color: #FFFFFF;
+}
+
+.sidebar-section ul {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+#content {
+  width: 80%;
+  float: right;
+}
+
+
+#content .content-section table {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+}
+
+#content .content-section {
+  margin-bottom: 10%;
+  padding-left: 10px;
+}
+
+#profile {
+  float: right;
+  margin: 0;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+}
+
+#footer {
+  clear: both;
+  width: 100%;
+  background-color: #262228;
+}
+
+#footer #contact {
+  color: #FFFFFF;
+}
+
+#form {
+  width: 80%;
+  float: right;
+}
+
+.form-content {
+  padding-left: 10px;
+}
+
+.form-content input[type=text] {
+  width: 100%;
+}
+
+.form-content input[type=submit] {
+  border : 2px dashed #007849;
+}
+
+.form-content input[type=reset] {
+  border : 2px dashed #FECE00;
+}
+
+.form-content h1 {
+  text-align: center;
+}
+
+.form-content fieldset legend {
+  text-align: center;
+}
