@@ -124,6 +124,23 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 10px;
 }
 
+#content table {
+  border: 1px solid #007849;
+}
+
+#content caption {
+  text-decoration: underline;
+  color: #0375B4;
+}
+
+#content th {
+  color: #0375B4;
+}
+
+#content td {
+  color: #007849;
+}
+
 #profile {
   float: right;
   margin: 0;
