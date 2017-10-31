@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title>JavaScript Number Guessing Game</title>
+
+  <script type="text/javascript">
+    // This function is run when the page loads.  See how the markup below has <body onload="init_game()">
+    // the onload results this function being called first
+    function init_game() {
+      my_guess = 0; // This is a global variable.  Why?
+      game(); // This is your function to play the game.
+
+      // console.log("starting game");
+
+    }
+
+    //This function gets things started
+    function game() {
+      magic = Math.floor(Math.random() * 100) + 1; // get a random number between 1 and 100. Also global
+      //write this function
+
+      get_number()
+
+    }
+
+
+    // This function gets a number from the user and then calls the evaluate_guess function so we can tell the user if their
+    //guess is too high, low or correcct
+    function get_number() {
+
+      my_guess = prompt("Enter guess");
+
+      setTimeout("evaluate_guess()", 100);
+
+    }
+
+
+    // You need to write this function.  This function should tell the user if their guess was too high, too low or correct.
+    function evaluate_guess() {
+
+      // Your code here
+
+      if (my_guess == magic) {
+        alert("You got it!");
+        return;
+      }
+
+      var something = (my_guess < magic) ? "guess HIGHER!" : "guess _lower_";
+
+      alert("You're almost there, " + something);
+
+      // This command is used to get the next number from the user.
+      setTimeout("get_number()", 100);
+    }
+  </script>
+
+
+
+</head>
+
+<body onload="init_game()">
+
+
+
+
+</body>
+
+</html>
