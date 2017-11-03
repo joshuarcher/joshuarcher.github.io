@@ -70,41 +70,133 @@
   </style>
 
   <script type="text/javascript">
-  //<![CDATA[
+
+    function resetGlobals() {
+      currentOperation = "";
+      numberCache = "";
+      possibleOperators = ["+", "-", "*", "/"];
+    }
+    resetGlobals();
+
+    function clearInput() {
+      resultTextInput.value = "";
+    }
+
+    function enterNumber(number) {
+      if (possibleOperators.indexOf(resultTextInput.value.slice(-1)) !== -1 ) {
+        // last character is an operator, so lets store the existing number and operator and clear display
+        var existingNumber = resultTextInput.value.slice(0,-1);
+        var operator = resultTextInput.value.slice(-1);
+        resultTextInput.value = "";
+
+        numberCache = Number(existingNumber);
+        currentOperation = operator;
+      }
+
+      resultTextInput.value += number;
+    }
+
+    function enterOperator(operator) {
+      if (resultTextInput.value == "") {
+        alert("please enter a number first");
+        return;
+      }
+
+      if (possibleOperators.indexOf(resultTextInput.value.slice(-1)) === -1) {
+        // The last character in the textbox is NOT an operator
+
+        if (currentOperation !== "" && numberCache !== "") {
+          calculate();
+        }
+
+        resultTextInput.value += operator;
+      } else {
+        resultTextInput.value = resultTextInput.value.slice(0,-1) + operator;
+      }
+    }
+
+    function calculate() {
+
+      if (currentOperation == "" || numberCache == "") {
+        alert("there's nothing to calculate!");
+        return;
+      }
+
+      // validate entry
+      if (possibleOperators.indexOf(resultTextInput.value.slice(-1)) !== -1) {
+        // The last character in the textbox is an operator
+        alert("invalid calculation! there's an operater in the input box");
+        return;
+      }
+
+      var finalValue = 0;
+      var currentInputValue = Number(resultTextInput.value);
+      if (currentOperation == "+") {
+        finalValue = numberCache + currentInputValue;
+      } else if (currentOperation == "-") {
+        finalValue = numberCache - currentInputValue;
+      } else if (currentOperation == "*") {
+        finalValue = numberCache * currentInputValue;
+      } else if (currentOperation == "/") {
+        finalValue = numberCache / currentInputValue;
+      }
+
+      resultTextInput.value = finalValue;
+    }
+
+    function decimalClicked() {
+      console.log("decimal clicked");
+
+      if (possibleOperators.indexOf(resultTextInput.value.slice(-1)) !== -1 ) {
+        // last character is an operator
+        enterNumber("0.");
+        return;
+      }
+
+      if (resultTextInput.value == "") {
+        resultTextInput.value = "0.";
+      } else if (resultTextInput.value.indexOf(".") !== -1) {
+        if (resultTextInput.value.slice(-1) == ".") {
+          return;
+        }
+        alert("You can't have multiple decimals in a number, silly.. ")
+      } else {
+        resultTextInput.value += ".";
+      }
+    }
+
     function initialize() {
       console.log("Initializing");
 
       resultTextInput = document.getElementById('calc-input');
-
       resultTextInput.addEventListener("input", function () {
         console.log(this.value);
       });
 
-      var numbers = document.getElementsByClassName('number');
+      document.getElementById("clear").addEventListener("click", clearInput);
+      document.getElementById("equal").addEventListener("click", calculate);
+      document.getElementById("decimal").addEventListener("click", decimalClicked);
 
+      var numbers = document.getElementsByClassName('number');
       for (var i=0; i < numbers.length; i++) {
 
         numbers[i].addEventListener("click", function () {
 
-          console.log(this.value);
-          resultTextInput.value += this.value;
+          // console.log(this.value);
+          enterNumber(this.value);
+          // resultTextInput.value += this.value;
         });
       }
 
       var operators = document.getElementsByClassName('operator');
-
       for (var i=0; i < operators.length; i++) {
 
         operators[i].addEventListener("click", function () {
 
-          console.log(this.value);
-          resultTextInput.value += this.value;
+          enterOperator(this.value);
         });
       }
-
-
     }
-  //]]>
   </script>
 </head>
 
@@ -144,10 +236,14 @@
         </div>
 
         <div class="row">
-          <button class="operator" value=".">.</button>
+          <button id="decimal" value=".">.</button>
           <button class="number" value="0">0</button>
-          <button class="operator" value="=">=</button>
+          <button id="equal" value="=">=</button>
           <button class="operator" value="+">+</button>
+        </div>
+
+        <div class="row">
+          <button id="clear">C</button>
         </div>
 
       </div>
