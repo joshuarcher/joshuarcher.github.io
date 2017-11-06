@@ -70,7 +70,7 @@
   </style>
 
   <script type="text/javascript">
-
+  <!--
     function resetGlobals() {
       currentOperation = "";
       numberCache = "";
@@ -80,6 +80,7 @@
 
     function clearInput() {
       resultTextInput.value = "";
+      resetGlobals();
     }
 
     function enterNumber(number) {
@@ -142,6 +143,7 @@
       }
 
       resultTextInput.value = finalValue;
+      resetGlobals();
     }
 
     function decimalClicked() {
@@ -197,10 +199,12 @@
         });
       }
     }
+    -->
   </script>
+
 </head>
 
-<body>
+<body onload="initialize()">
 
   <div id="main_container">
 
@@ -258,9 +262,9 @@
   </div>
 
 </body>
-
+<!--
 <script type="text/javascript">
   initialize();
-</script>
+</script> -->
 
 </html>
