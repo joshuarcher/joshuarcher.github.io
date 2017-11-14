@@ -20,15 +20,6 @@ function makeCloud() {
     }
   }
 
-  // console.log(uniqueTagArray.length);
-  // console.log(tagCountArray.length);
-  // //
-  // console.log(maxFrequency());
-
-
-
-
-
   var newCloudDiv = createDivWith(uniqueTagArray);
   var maxFreq = maxFrequency();
   var spanPointer;
@@ -55,14 +46,38 @@ function makeCloud() {
 
 function saveCloud() {
 // save contents of textarea as a cookie
+  var textAreaString = document.getElementById('tags').value;
+  var da = new Date();
+  da.setTime(da.getTime() + (5*60000));
+  console.log(textAreaString);
+  document.cookie = "tags=" + textAreaString + ";" + "expires=" + da.toGMTString();
 }
 
 function loadCloud() {
-// load contents of previously stored cookie
+
+  var cookie = document.cookie;
+
+  if (!cookie) {
+    return;
+  }
+
+  var firstCookie = cookie.split(";")[0];
+
+  if (!firstCookie) {
+    return;
+  }
+
+  var oldTextArea = firstCookie.split("=")[1];
+
+  if (!oldTextArea) {
+    return;
+  }
+
+  document.getElementById('tags').value = oldTextArea;
 }
 
 function clearArea() {
-// clear contents of text area
+  document.getElementById('tags').value = "";
 }
 
 function maxFrequency() {
