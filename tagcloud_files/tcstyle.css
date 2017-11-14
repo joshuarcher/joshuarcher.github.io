@@ -1,0 +1,22 @@
+body { background-image: url(cloud.jpg);
+       color:white;
+}
+
+
+label { font-size: 1.5em;
+        font-weight: bold}
+
+textarea { background-color: white;
+           color: blue; }
+
+div { width: 20em;}
+
+span { color: silver; }
+
+span:hover { color: white;}
+
+input { background: blue;
+        color:white;
+        height: 2em;
+
+}

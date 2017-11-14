@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0074)http://www.math.ucla.edu/~virtanen/40a.1.17f/assignments/hw4/tagcloud.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Make a Tag Cloud</title>
+  <link rel="stylesheet" type="text/css" href="./tagcloud_files/tcstyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <script type="text/javascript" src="./tagcloud_files/tagcloud.js">
+  </script>
+</head>
+
+<body id="body">
+  <h1>Tag Cloud Form</h1>
+  <form action="http://www.math.ucla.edu/~virtanen/40a.1.17f/assignments/hw4/tagcloud.html">
+    <fieldset>
+      <label for="tags">Enter a bunch of tags separated by spaces.</label><br>
+      <textarea name="tags" id="tags" rows="10" cols="100">grape cherry cherry apple pineapple cherry apple banana apple pineapple banana pineapple apple pineapple pineapple pineapple banana apple banana peach plum peach plum grape lemon lemon peach lemon lime lime lemon lemon lemon peach peach mango guava mango lemon lemon lemon peach cherry cherry cherry lime lime plum pineapple cherry pineapple</textarea>
+      <!-- <textarea name="tags" id="tags" rows="10" cols="100">word hello word hello</textarea> -->
+      <br>
+      <input type="button" name="makecloud" id="makecloud" value="Make Cloud" onclick="makeCloud()">
+      <input type="button" name="savecloud" id="savecloud" value="Save Cloud" onclick="saveCloud()">
+      <input type="button" name="loadcloud" id="loadcloud" value="Load Cloud" onclick="loadCloud()">
+      <input type="button" name="cleararea" id="cleararea" value="Clear TextArea" onclick="clearArea()">
+      <input type="reset" value="Reset TextArea">
+    </fieldset>
+  </form>
+  <h1>Tag Cloud</h1>
+  <div id="cloud"></div>
+  <!-- W3C XHTML Validation logo-->
+  <p id="w3cValidation">
+    <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+
+</body>
+
+</html>
