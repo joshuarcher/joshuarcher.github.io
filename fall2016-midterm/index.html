@@ -1,27 +1,25 @@
-#!/usr/local/bin/php
-<?php
-
-// echo "Hello World";
-function writeContainer()
-{
-  echo "hello world";
-}
-
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-  <title>My First PHP Embedded Page</title>
-  <link rel="stylesheet" type="text/css" href="calendar.css" />
+  <title>JS Events</title>
+
+  <style media="screen">
+    * {
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
   <div id="container">
-    <?php writeContainer(); ?>
+    <img id="ghost" src="http://via.placeholder.com/150x150"/>
   </div>
 </body>
 
+<footer>
+  <script type="text/javascript" src="./index.js"></script>
+</footer>
 </html>
