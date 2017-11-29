@@ -5,10 +5,10 @@ $dateOne = $_GET["date1"];
 $dateTwo = $_GET["date2"];
 
 function writeContainer() {
-  print("date one: " + $dateOne);
-  print("date two: " + $dateTwo);
+  print("<p>date one: $dateOne</p>");
+  print("<p>date two: $dateTwo</p>");
 
-  print("a;lsdkfa;sdlkfja;slkdjf");
+
 }
 
 
