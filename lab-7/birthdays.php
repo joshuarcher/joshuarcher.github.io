@@ -34,8 +34,14 @@ function writeCSS()
 {
     echo "
     table {
-      border-collapse: collapse;
       border: 1px solid black;
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto
+    }
+    td {
+      border: 1px solid black;
+      padding: 1px;
     }
     ";
 }
