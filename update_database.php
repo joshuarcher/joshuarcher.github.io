@@ -1,6 +1,6 @@
 #!/usr/local/bin/php -d display_errors=STDOUT
 <?php
-
+date_default_timezone_set('America/Los_Angeles');
 $database = "dbjosharcher.db";
 
 
@@ -44,6 +44,11 @@ $date = $_POST["date"];
 $time  = $_POST["time"];
 $event_title = $_POST["event_title"];
 $event_message = $_POST["event_message"];
+
+if (strlen($person) < 1 || strlen($date) < 1 || strlen($time) < 1 || strlen($event_title) < 1 || strlen($event_message) < 1) {
+  echo "<h1>Something is wrong with your form data</h1>";
+  exit;
+}
 
 // convert date+time to a timestamp...
 $actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("yesterday midnight"));
