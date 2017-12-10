@@ -56,14 +56,14 @@ print "<p>$sql</p>";
 
 // Write code here to extract the name, SID and GPA from the $_GET data.
 
-// $name = complete this
-// $SID  = complete this
-// $GPA  = complete this
+$name = $_GET["name"];
+$SID  = $_GET["SID"];
+$GPA  = $_GET["GPA"];
 
 
 //  Insert a new record to your database with name = $name, sid = $SID and gpa = $GPA
 //  Create the $sql string that will accomplish this.
-//  $sql = your string
+ $sql = "INSERT INTO $table ($field1, $field2, $field3) VALUES ($name,$SID,$GPA)";
 
 
 print "Inserting a new record to the bruins table the command I am using is:</br>";
