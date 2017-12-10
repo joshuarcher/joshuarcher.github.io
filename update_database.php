@@ -1,23 +1,6 @@
-#!/usr/local/bin/php -d display_errors=STDOUT
-<?php
-  // begin this XHTML page
-  print('<?xml version="1.0" encoding="utf-8"?>');
-  print("\n");
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:v="urn:schemas-microsoft-com:vml">
-<head>
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-<title>PHP Example: Accessing a SQLite 3 Database using PHP</title>
-</head>
-<body>
-<p>
 <?php
 
-
-$database = "students.db";
+$database = "dbjosharcher.db";
 
 
 try
@@ -35,72 +18,42 @@ catch (Exception $exception)
 
 }
 
-
-// define tablename and field names for a SQLite3 query to create a table in a database
-$table = "bruins";
-$field1 = "name";
-$field2 = "sid";
-$field3 = "gpa";
-
+$table = "event_table";
+$field1 = "time";
+$field2 = "person";
+$field3 = "event_title";
+$field4 = "event_message";
 
 // Create the table
 $sql= "CREATE TABLE IF NOT EXISTS $table (
-$field1 varchar(100),
-$field2 int(9),
-$field3 decimal(3,1)
+$field1 int(12),
+$field2 varchar(20),
+$field3 varchar(300),
+$field4 varchar(300)
 )";
-$result = $db->query($sql);
+$result = $db->query($sql
 
-print "<h3>Creating the table</h3>";
-print "<p>$sql</p>";
-
-// Write code here to extract the name, SID and GPA from the $_GET data.
-
-$name = $_GET["name"];
-$SID  = $_GET["SID"];
-$GPA  = $_GET["GPA"];
-
-
-//  Insert a new record to your database with name = $name, sid = $SID and gpa = $GPA
-//  Create the $sql string that will accomplish this.
- $sql = "INSERT INTO $table ($field1, $field2, $field3) VALUES ('$name',$SID,$GPA)";
-
-
-print "Inserting a new record to the bruins table the command I am using is:</br>";
-print "$sql";
-$result = $db->query($sql);
-
-
-// Be sure you understand this code:
-// print an XHTML table to display the current table
-$sql = "SELECT * FROM $table";
-$result = $db->query($sql);
-
-print "<table border='border'>\n";
-print "  <tr>\n";
-print "     <th>" . $field1 . "</th>\n";
-print "     <th>" . $field2 . "</th>\n";
-print "     <th>" . $field3 . "</th>\n";
-print "  </tr>\n";
-
-// obtain the results from the SELECT query as an array holding a record
-// one iteration per record for this select query
-while($record = $result->fetchArray())
-{
-  print "  <tr>\n";
-
-  // Fill in details here
-  print "     <th>" . $record[$field1] . "</th>\n";
-  print "     <th>" . $record[$field2] . "</th>\n";
-  print "     <th>" . $record[$field3] . "</th>\n";
-
-  // Look at the slides to see how to extract the info from $record
-  // Each iteration of the loop should write a table row
-
-  print "  </tr>\n";
+if (!isset($_POST["person"]) || !isset($_POST["date"]) || !isset($_POST["time"]) || !isset($_POST["event_title"]) || !isset($_POST["event_message"])) {
+  echo "<h1>Something is wrong with your form data</h1>";
+  exit;
 }
 
-print "</table>\n";
-?>
-</body>
-</html>
+$person = $_POST["person"];
+$date = $_POST["date"];
+$time  = $_POST["time"];
+$event_title = $_POST["event_title"];
+$event_message = $_POST["event_message"];
+
+// convert date+time to a timestamp...
+$actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("yesterday midnight"));
+
+$sql = "INSERT INTO $table ($field1, $field2, $field3, $field4) VALUES ($time,'$person','$event_title','$event_message')";
+
+echo "Inserting a new record to the bruins table the command I am using is:</br>";
+echo "$sql";
+$result = $db->query($sql);
+
+echo "$result";
+
+
+ ?>
