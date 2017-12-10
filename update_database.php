@@ -53,7 +53,7 @@ if (strlen($person) < 1 || strlen($date) < 1 || strlen($time) < 1 || strlen($eve
 // convert date+time to a timestamp...
 $actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("yesterday midnight"));
 
-$sql = "INSERT INTO $table ($field1, $field2, $field3, $field4) VALUES ($time,'$person','$event_title','$event_message')";
+$sql = "INSERT INTO $table ($field1, $field2, $field3, $field4) VALUES ($actual_timestamp,'$person','$event_title','$event_message')";
 
 echo "Inserting a new record to the bruins table the command I am using is:</br>";
 echo "$sql";
