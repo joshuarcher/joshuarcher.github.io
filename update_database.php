@@ -32,7 +32,7 @@ $field2 varchar(20),
 $field3 varchar(300),
 $field4 varchar(300)
 )";
-$result = $db->query($sql
+$result = $db->query($sql);
 
 if (!isset($_POST["person"]) || !isset($_POST["date"]) || !isset($_POST["time"]) || !isset($_POST["event_title"]) || !isset($_POST["event_message"])) {
   echo "<h1>Something is wrong with your form data</h1>";
