@@ -55,10 +55,10 @@ $date = implode("/", $date_exploded);
 
 echo strtotime($date);
 echo strtotime($time);
-echo strtotime("yesterday midnight");
+echo strtotime("midnight", time());
 
 // convert date+time to a timestamp...
-$actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("yesterday midnight"));
+$actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("midnight", time()));
 
 $sql = "INSERT INTO $table ($field1, $field2, $field3, $field4) VALUES ($actual_timestamp,'$person','$event_title','$event_message')";
 
