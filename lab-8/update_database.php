@@ -90,6 +90,9 @@ while($record = $result->fetchArray())
   print "  <tr>\n";
 
   // Fill in details here
+  print "     <th>" . $record[$field1] . "</th>\n";
+  print "     <th>" . $record[$field2] . "</th>\n";
+  print "     <th>" . $record[$field3] . "</th>\n";
 
   // Look at the slides to see how to extract the info from $record
   // Each iteration of the loop should write a table row
