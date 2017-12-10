@@ -63,7 +63,7 @@ $GPA  = $_GET["GPA"];
 
 //  Insert a new record to your database with name = $name, sid = $SID and gpa = $GPA
 //  Create the $sql string that will accomplish this.
- $sql = "INSERT INTO $table ($field1, $field2, $field3) VALUES ($name,$SID,$GPA)";
+ $sql = "INSERT INTO $table ($field1, $field2, $field3) VALUES ('$name',$SID,$GPA)";
 
 
 print "Inserting a new record to the bruins table the command I am using is:</br>";
