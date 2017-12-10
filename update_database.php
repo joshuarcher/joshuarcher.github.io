@@ -1,3 +1,4 @@
+#!/usr/local/bin/php -d display_errors=STDOUT
 <?php
 
 $database = "dbjosharcher.db";
