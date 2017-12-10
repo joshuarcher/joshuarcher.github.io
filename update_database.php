@@ -50,6 +50,9 @@ if (strlen($person) < 1 || strlen($date) < 1 || strlen($time) < 1 || strlen($eve
   exit;
 }
 
+$date_exploded = explode("-", $date);
+$date = implode("/", $date_exploded);
+
 // convert date+time to a timestamp...
 $actual_timestamp = + strtotime($date) + (strtotime($time) - strtotime("yesterday midnight"));
 
