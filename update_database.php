@@ -82,8 +82,6 @@
   echo "$sql";
   $result = $db->query($sql);
 
-  echo "$result";
-
   echo "<p><a href=\"calendar2.php\">Click here to see the calendar</a></p>";
 
   ?>

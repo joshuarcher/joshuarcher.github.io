@@ -176,6 +176,34 @@ function writeContainer() {
   echo "</table>";
 
 }
+
+function writeButtons() {
+
+  global $calendar_start_time, $hours_to_show;
+  $past = $calendar_start_time - 60*60*$hours_to_show;
+  $future = $calendar_start_time + 60*60*$hours_to_show;
+
+  echo "<form id=\"prev\" method=\"get\" action=\"calendar2.php\">
+	<p>
+	<input type=\"hidden\" name=\"time_stamp\" value='$past' />
+	<input type=\"submit\" value=\"Previous twelve hours\"/>
+	</p>
+  </form>";
+
+  echo "<form id=\"next\" method=\"get\" action=\"calendar2.php\">
+	<p>
+	<input type=\"hidden\" name=\"time_stamp\" value='$future' />
+	<input type=\"submit\" value=\"Next twelve hours\"/>
+	</p>
+  </form>";
+
+  echo "<form id=\"today\" method=\"get\" action=\"calendar2.php\">
+	<p>
+	<input type=\"submit\" value=\"Today\"/>
+	</p>
+  </form>";
+
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
@@ -190,7 +218,10 @@ function writeContainer() {
 
 <body>
   <div class="container">
-    <?php writeContainer(); ?>
+    <?php
+    writeContainer();
+    writeButtons();
+    ?>
   </div>
 </body>
 
