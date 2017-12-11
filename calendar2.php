@@ -163,18 +163,14 @@ function writeContainer() {
     $timeString = get_hour_string($timeToDisplay);
     $isEven = ($i % 2) > 0;
 
-    $start_timestamp = $timeToDisplay;
-    $end_timestamp = $timeToDisplay + 60*60 - 1;
+    $start_timestamp = $timeToDisplay - ($timeToDisplay % 3600);
+    $end_timestamp = $start_timestamp + 3599;
 
     writeCalendarRow($timeString, $isEven, $sql_result, $start_timestamp, $end_timestamp);
 
   }
 
-  // $currentTimePlusOneHour = time() + 60*60;
-  // echo get_hour_string($currentTimePlusOneHour);
-
   echo "</table>";
-
 }
 
 function writeButtons() {
