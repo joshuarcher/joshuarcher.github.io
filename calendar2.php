@@ -1,5 +1,7 @@
 #!/usr/local/bin/php
 <?php
+// I really dislike this solution because it makes a sql query way too many times..
+// an alternative solution is commented out. it only makes the sql query once.
 $hours_to_show = 12;
 $database = "dbjosharcher.db";
 date_default_timezone_set('America/Los_Angeles');
