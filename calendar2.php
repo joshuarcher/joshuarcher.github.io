@@ -35,7 +35,7 @@ function get_events($person, $timestamp) {
   $start_timestamp = $timestamp - ($timestamp % 3600);
   $end_timestamp = $start_timestamp + 3600;
 
-  $sql = "SELECT * FROM $table WHERE $field2=$person AND $field1 >= $start_timestamp AND $field1 < $end_timestamp";
+  $sql = "SELECT * FROM $table WHERE $field2='$person' AND $field1 >= $start_timestamp AND $field1 < $end_timestamp";
   $result = $db->query($sql);
 
   $result_array = array();
