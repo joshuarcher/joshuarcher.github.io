@@ -10,8 +10,49 @@ if (isset($_GET["time_stamp"]) && $_GET["time_stamp"] > 0) {
   $calendar_start_time = $_GET["time_stamp"];
 }
 
+function get_events($person, $timestamp) {
+  global $database, $calendar_start_time, $hours_to_show;
+
+  try
+  {
+       $db = new SQLite3($database);
+  }
+  catch (Exception $exception)
+  {
+      echo '<p>There was an error connecting to the database!</p>';
+      if ($db)
+      {
+          echo $exception->getMessage();
+      }
+  }
+
+  $table = "event_table";
+  $field1 = "time";
+  $field2 = "person";
+  $field3 = "event_title";
+  $field4 = "event_message";
+
+  $start_timestamp = $timestamp - ($timestamp % 3600);
+  $end_timestamp = $start_timestamp + 3600;
+
+  $sql = "SELECT * FROM $table WHERE $field2=$person AND $field1 >= $start_timestamp AND $field1 < $end_timestamp";
+  $result = $db->query($sql);
+
+  $result_array = array();
+
+  while($record = $result->fetchArray()) {
+    $titlee = $record[$field3];
+    $messagee = $record[$field4];
+    array_push($result_array, "<p>");
+    array_push($result_array, "$titlee: $messagee");
+    array_push($result_array, "</p>");
+  }
+  $result_string = implode("\n", $result_array);
+
+  return $result_string;
+}
+
 function get_event() {
-  // return an array of events for the given time period
   global $database, $calendar_start_time, $hours_to_show;
 
   try
@@ -123,30 +164,34 @@ function writeCalendarRow($time, $isOdd, $sql_result, $start_timestamp, $end_tim
 
 
   echo "<tr class=\"$rowClass\">";
-  echo "<th class='hr_td'>$time</th>";
-  echo "<th>";
-  foreach ($joe_array as $value) {
-    $title_display = $value[$sql_title];
-    $message_display = $value[$sql_message];
-    echo "<p>$title_display: $message_display</p>";
-  }
-  echo "</th>";
-  echo "<th>";
-  foreach ($joanna_array as $value) {
-    $title_display = $value[$sql_title];
-    $message_display = $value[$sql_message];
-    echo "<p>$title_display: $message_display</p>";
-  }
-  echo "</th>";
-  echo "<th>";
-  foreach ($cub_array as $value) {
-    $title_display = $value[$sql_title];
-    $message_display = $value[$sql_message];
-    echo "<p>$title_display: $message_display</p>";
-  }
-  echo "</th>";
+  echo "<td class='hr_td'>$time</td>";
+  echo "<td>";
+  echo get_events("Joe", $start_timestamp);
+  // foreach ($joe_array as $value) {
+  //   $title_display = $value[$sql_title];
+  //   $message_display = $value[$sql_message];
+  //   echo "<p>$title_display: $message_display</p>";
+  // }
+  echo "</td>";
+  echo "<td>";
+  echo get_events("Joanna", $start_timestamp);
+  // foreach ($joanna_array as $value) {
+  //   $title_display = $value[$sql_title];
+  //   $message_display = $value[$sql_message];
+  //   echo "<p>$title_display: $message_display</p>";
+  // }
+  echo "</td>";
+  echo "<td>";
+  echo get_events("Cub", $start_timestamp);
+  // foreach ($cub_array as $value) {
+  //   $title_display = $value[$sql_title];
+  //   $message_display = $value[$sql_message];
+  //   echo "<p>$title_display: $message_display</p>";
+  // }
+  echo "</td>";
   echo "</tr>";
 }
+// get_events($person, $timestamp)
 
 function writeContainer() {
 
