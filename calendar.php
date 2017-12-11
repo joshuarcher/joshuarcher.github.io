@@ -69,7 +69,7 @@ function writeCalendarRow($time, $isOdd) {
 function writeContainer() {
 
   $currentDateString = createCurrentDateString();
-  echo "<h1>Bruin Family Schedue For $currentDateString</h1>";
+  echo "<h1>Bruin Family Schedule For $currentDateString</h1>";
   echo "<table id=\"event_table\">";
 
   writeHeaderRow();
@@ -102,7 +102,7 @@ function writeContainer() {
 </head>
 
 <body>
-  <div id="container">
+  <div class="container">
     <?php writeContainer(); ?>
   </div>
 </body>
