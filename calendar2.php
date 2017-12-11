@@ -122,7 +122,7 @@ function createExactTimestamp($timestamp) {
 }
 
 function createCurrentDateString() {
-  $localTime = createExactTimestamp(time());
+  $localTime = createExactTimestamp($calendar_start_time);
   $date = date("D, F jS, Y, ");
   return $date . '' . $localTime;
 }
