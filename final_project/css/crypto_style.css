@@ -1,0 +1,124 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+/*
+lgiht gray: #828282
+
+*/
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 60em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2;
+  color: #555;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+.container {
+  margin: 1em;
+  background-color: #f6f6ef;
+}
+
+#navbar {
+  height: 2em;
+  background-color: #FFE6A6;
+}
+
+.navbarItem {
+  float: left;
+  height: 100%;
+}
+
+#logo {
+  width: 2em;
+  height: 2em;
+}
+
+#logoTitle a {
+  line-height: 2em;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  font-family: "Helvetica";
+}
+
+#logoTitle a:visited {
+  color: #555;
+}
+
+.siteLink a {
+  line-height: 2em;
+  vertical-align: middle;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-decoration: none;
+  color: #333;
+}
+
+.siteLink a:visited {
+  color: #333;
+}
+
+#logo img {
+  height: 100%;
+  width: auto;
+}
+
+#validator {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#items {
+  padding-left: 0.5em;
+}
+
+.listItem {
+  height: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.listItem .listItemTop {
+  height: 1.3em;
+}
+
+.listItem .listItemBottom {
+  height: 1em;
+  padding-left: 35px;
+  font-size: 0.6em;
+}
+
+.listItem .upvote a {
+  text-decoration: none;
+}
+
+.listItem .title {
+  padding-left: 0.3em;
+}
+
+.listItem .title a {
+  color: #333;
+}
+
+.listItem .title a:visited {
+  color: #828282;
+}
+
+.listLink a {
+  color: #555;
+  text-decoration: none;
+}
+
+.listLink a:visited {
+  color: #555;
+}
+
+.submitForm {
+  padding: 1em;
+}
