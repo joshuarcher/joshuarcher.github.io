@@ -25,7 +25,7 @@ function writePosts(postsJson) {
 
     var listItemTop = document.createElement("div");
     listItemTop.className = "listItemTop";
-    listItem.appendChild(listItem);
+    listItem.appendChild(listItemTop);
 
     var rankSpan = document.createElement("span");
     rankSpan.className = "rank";
