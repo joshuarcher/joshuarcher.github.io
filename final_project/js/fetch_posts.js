@@ -23,6 +23,7 @@ function writePosts(postsJson) {
   console.log(posts[0]["url"]);
   var i = 0;
   for (var index in posts) {
+    console.log(index);
     i++;
 
     var listItem = document.createElement("div");
