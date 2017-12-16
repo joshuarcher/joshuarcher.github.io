@@ -39,9 +39,9 @@ $field5 int(40)
 )";
 $result = $db->query($sql);
 
-$title = $_GET["title"];
-$url = $_GET["url"];
-$text = $_GET["text"];
+$title = $_POST["title"];
+$url = $_POST["url"];
+$text = $_POST["text"];
 $upvoteCount = 0;
 $date = new DateTime();
 $timestamp = $date->getTimestamp();
