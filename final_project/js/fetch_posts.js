@@ -11,7 +11,7 @@ function fetchPosts() {
     }
   }
 
-  xhr.open("GET", "../php/fetch_posts.php");
+  xhr.open("GET", "./php/fetch_posts.php");
   xhr.send(null);
 }
 
