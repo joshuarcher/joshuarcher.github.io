@@ -1,7 +1,8 @@
 function timeAgo(timestamp) {
 
-  var diffMinutes = Math.floor(Date.now() / 1000) - timestamp;
-  var hours = Math.floor(diffMinutes / 60);
+  var diffSeconds = Math.floor(Date.now() / 1000) - timestamp;
+  var hours = Math.floor(diffMinutes / 3600);
+  var diffMinutes = Math.floor(diffSeconds/60);
 
   if (hours < 1) {
     // var minutes = Math.floor(diff / 60);
