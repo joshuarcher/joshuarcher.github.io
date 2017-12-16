@@ -48,8 +48,8 @@ function writePosts(postsJson) {
     listItemTop.appendChild(titleSpan);
 
     var titleLink = document.createElement("a");
-    titleLink.href = post.url;
-    titleLink.innerHTML = post.title;
+    titleLink.href = post["url"];
+    titleLink.innerHTML = post["title"];
     titleSpan.appendChild(titleLink);
 
     document.getElementById("items").appendChild(listItem);
