@@ -34,42 +34,43 @@ function writePosts(postsJson) {
 
     var listItemTop = document.createElement("div");
     listItemTop.className = "listItemTop";
-    listItem.appendChild(listItemTop);
 
     var rankSpan = document.createElement("span");
     rankSpan.className = "rank";
-    rankSpan.innerHTML = i + "."; // JARCH
+    rankSpan.innerHTML = i + ".";
     listItemTop.appendChild(rankSpan);
 
     var upvoteSpan = document.createElement("span");
     upvoteSpan.className = "upvote";
     upvoteSpan.id = "up_1";
-    listItemTop.appendChild(upvoteSpan);
 
     var upvoteLink = document.createElement("a");
     upvoteLink.href = "#";
     upvoteLink.innerHTML = "<svg height=\"10\" width=\"10\"\><polygon points=\"10,10 5,0 0,10\" style=\"fill:#555;\" /></svg>";
     upvoteSpan.appendChild(upvoteLink);
 
+    listItemTop.appendChild(upvoteSpan);
+
     var titleSpan = document.createElement("span");
     titleSpan.className = "title";
-    listItemTop.appendChild(titleSpan);
-
     var titleLink = document.createElement("a");
     titleLink.href = post.url;
     titleLink.innerHTML = post.title;
     titleSpan.appendChild(titleLink);
 
+    listItemTop.appendChild(titleSpan);
+
+    listItem.appendChild(listItemTop);
+
     var listItemBottom = document.createElement("div");
     listItemTop.className = "listItemBottom";
-    listItem.appendChild(listItemBottom);
 
     var pointsSpan = document.createElement("span");
     pointsSpan.className = "listLink";
     pointsSpan.innerHTML = post.upvoteCount + " points";
     listItemBottom.appendChild(pointsSpan);
 
-    var spacerOne = document.createTextNode(" |");
+    var spacerOne = document.createTextNode(" | ");
     listItemBottom.appendChild(spacerOne);
 
     var timeSpan = document.createElement("span");
@@ -77,17 +78,20 @@ function writePosts(postsJson) {
     timeSpan.innerHTML = timeAgo(post.timestamp);
     listItemBottom.appendChild(timeSpan);
 
-    var spacerTwo = document.createTextNode(" |");
+    var spacerTwo = document.createTextNode(" | ");
     listItemBottom.appendChild(spacerTwo);
 
     var hideSpan = document.createElement("span");
     hideSpan.className = "listLink";
-    listItemBottom.appendChild(hideSpan);
 
     var hideLink = document.createElement("a");
     hideLink.href = "#";
     hideLink.innerHTML = "hide";
     hideSpan.appendChild(hideLink);
+
+    listItemBottom.appendChild(hideSpan);
+
+    listItem.appendChild(listItemBottom);
 
     document.getElementById("items").appendChild(listItem);
 
