@@ -3,15 +3,15 @@ function timeAgo(timestamp) {
   var diff = Date.now() - timestamp;
   var hours = Math.floor(diff / 3600);
 
-  if hours < 1 {
+  if (hours < 1) {
     var minutes = Math.floor(diff / 60);
-    if minutes < 1 {
+    if (minutes < 1) {
       return "less than a minute ago";
-    } else if minutes == 1 {
+    } else if (minutes == 1) {
       return "1 minute ago";
     }
     return minutes + " minutes ago";
-  } else if hours == 1 {
+  } else if (hours == 1) {
     return "1 hour ago";
   }
 
