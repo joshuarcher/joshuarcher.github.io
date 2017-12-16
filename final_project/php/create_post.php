@@ -3,6 +3,8 @@
 
 // header( 'Location: http://pic.ucla.edu/~josharcher/final_project/site_index.html' );
 
+date_default_timezone_set('America/Los_Angeles');
+
 $database = "posts.db";
 
 try
