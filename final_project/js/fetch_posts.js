@@ -18,6 +18,9 @@ function fetchPosts() {
 
 function writePosts(postsJson) {
   var posts = postsJson["posts"];
+  console.log(posts);
+  console.log(posts[0]);
+  console.log(posts[0]["url"]);
   var i = 0;
   for (var post in posts) {
     i++;
