@@ -18,12 +18,9 @@ function fetchPosts() {
 
 function writePosts(postsJson) {
   var posts = postsJson["posts"];
-  console.log(posts);
-  console.log(posts[0]);
-  console.log(posts[0]["url"]);
   var i = 0;
   for (var index in posts) {
-    console.log(index);
+    console.log(posts[index]);
     i++;
 
     var listItem = document.createElement("div");
