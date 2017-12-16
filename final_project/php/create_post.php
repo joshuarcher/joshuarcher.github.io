@@ -1,3 +1,4 @@
+#!/usr/local/bin/php -d display_errors=STDOUT
 <?php
 
 header( 'Location: http://pic.ucla.edu/~josharcher/final_project/site_index.html' );
@@ -38,9 +39,9 @@ $field5 int(40)
 )";
 $result = $db->query($sql);
 
-$title = $_POST["title"];
-$url = $_POST["url"];
-$text = $_POST["text"];
+$title = $_GET["title"];
+$url = $_GET["url"];
+$text = $_GET["text"];
 $upvoteCount = 0;
 $date = new DateTime();
 $timestamp = $date->getTimestamp();
