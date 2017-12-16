@@ -1,7 +1,7 @@
 #!/usr/local/bin/php -d display_errors=STDOUT
 <?php
 
-header( 'Location: http://pic.ucla.edu/~josharcher/final_project/site_index.html' );
+// header( 'Location: http://pic.ucla.edu/~josharcher/final_project/site_index.html' );
 
 $database = "posts.db";
 
@@ -30,7 +30,7 @@ $field5 = "timestamp";
 
 
 // Create the table
-$sql= "CREATE TABLE IF NOT EXISTS $table (
+$sql = "CREATE TABLE IF NOT EXISTS $table (
 $field1 varchar(100),
 $field2 varchar(100),
 $field3 varchar(1000),
