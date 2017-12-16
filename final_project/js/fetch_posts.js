@@ -4,7 +4,7 @@ function fetchPosts() {
   console.log("fetching");
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      var posts = JSON.parse(this.responseText);
+      var posts = JSON.parse(xhr.responseText);
 
       writePosts(posts);
       console.log(result);
