@@ -82,7 +82,7 @@ function writePosts(postsJson) {
 
     var hideSpan = document.createElement("span");
     hideSpan.className = "listLink";
-    listItemBottom.appendChild(timeSpan);
+    listItemBottom.appendChild(hideSpan);
 
     var hideLink = document.createElement("a");
     hideLink.href = "#";
