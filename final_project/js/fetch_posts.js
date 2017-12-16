@@ -20,7 +20,6 @@ function writePosts(postsJson) {
   var posts = postsJson["posts"];
   var i = 0;
   for (var index in posts) {
-    console.log(posts[index]);
     var post = JSON.parse(posts[index]);
     i++;
 

@@ -1,0 +1,9 @@
+http://pic.ucla.edu/~josharcher/final_project/site_index.html
+
+I am still updating this site in hopes that the grader hasn't gotten to it yet.
+this is my last working commit b/c something messed up.
+
+How do you use this? this is hacker news for crypto
+- see a list of posts on the front page
+- upvote posts
+- submit new posts by clicking submit on the navbar
