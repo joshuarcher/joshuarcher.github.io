@@ -1,10 +1,10 @@
 function timeAgo(timestamp) {
 
-  var diffMinutes = Math.floor(Date.now() / 1000) - timestamp;
-  console.log(diffMinutes);
-  var hours = Math.floor(diffMinutes / 60);
-  console.log(hours);
-  if (hours < 1) {
+  var diffSeconds = Math.floor(Date.now() / 1000) - timestamp;
+  var diffMinutes = Math.floor(diffSeconds / 60);
+  var diffHours = Math.floor(diffMinutes / 60);
+
+  if (diffHours < 1) {
     // var minutes = Math.floor(diff / 60);
     if (diffMinutes < 1) {
       return "less than a minute ago";
@@ -12,7 +12,7 @@ function timeAgo(timestamp) {
       return "1 minute ago";
     }
     return diffMinutes + " minutes ago";
-  } else if (hours == 1) {
+  } else if (diffHours == 1) {
     return "1 hour ago";
   }
 
