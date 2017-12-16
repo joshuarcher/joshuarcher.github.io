@@ -1,9 +1,18 @@
 http://pic.ucla.edu/~josharcher/final_project/site_index.html
 
-I am still updating this site in hopes that the grader hasn't gotten to it yet.
-this is my last working commit b/c something messed up.
 
 How do you use this? this is hacker news for crypto
 - see a list of posts on the front page
 - upvote posts
-- submit new posts by clicking submit on the navbar
+- submit new posts by clicking submit on the navbarItem
+
+This was going for an A grade
+- I used an external stylesheet
+- cookies are used so that users can upvote twice
+- there is JS involved
+- there are JS events like the "onload" on the body of site_index
+- site_index is constructed by first creating DOM elements
+
+- uses AJAX for an async call to PHP
+- there are timestamps on the Database
+- page is refreshed every 5 seconds
