@@ -1,3 +1,7 @@
+function upvote(timestamp) {
+
+}
+
 function timeAgo(timestamp) {
 
   var diffSeconds = Math.floor(Date.now() / 1000) - timestamp;
@@ -56,10 +60,13 @@ function writePosts(postsJson) {
 
     var upvoteSpan = document.createElement("span");
     upvoteSpan.className = "upvote";
-    upvoteSpan.id = "up_1";
+    upvoteSpan.id = "up_"+post.timestamp;
 
     var upvoteLink = document.createElement("a");
     upvoteLink.href = "#";
+    upvoteLink.onclick = function () {
+      upvote(post.timestamp);
+    }
     upvoteLink.innerHTML = "<svg height=\"10\" width=\"10\"\><polygon points=\"10,10 5,0 0,10\" style=\"fill:#555;\" /></svg>";
     upvoteSpan.appendChild(upvoteLink);
 
