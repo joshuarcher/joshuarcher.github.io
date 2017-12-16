@@ -4,11 +4,11 @@ function fetchPosts() {
   console.log("fetching");
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText);
+      // console.log(xhr.responseText);
       var posts = JSON.parse(xhr.responseText);
 
       writePosts(posts);
-      console.log(result);
+      // console.log(result);
     }
   }
 
@@ -18,7 +18,9 @@ function fetchPosts() {
 
 function writePosts(postsJson) {
   var posts = postsJson["posts"];
-  for (i = 0; i < posts.length; i++) {
+  var i = 0;
+  for (var post in posts) {
+    i++;
 
     var listItem = document.createElement("div");
     listItem.className = "listItem";
@@ -29,7 +31,7 @@ function writePosts(postsJson) {
 
     var rankSpan = document.createElement("span");
     rankSpan.className = "rank";
-    rankSpan.innerHTML = `{i+1}.`; // JARCH
+    rankSpan.innerHTML = i + "."; // JARCH
     listItemTop.appendChild(rankSpan);
 
     var upvoteSpan = document.createElement("span");
@@ -46,7 +48,8 @@ function writePosts(postsJson) {
     listItemTop.appendChild(titleSpan);
 
     var titleLink = document.createElement("a");
-    titleLink.href = posts[0].url;
+    titleLink.href = post.url;
+    titleLink.innerHTML = post.title;
     titleSpan.appendChild(titleLink);
 
     document.getElementById("items").appendChild(listItem);
