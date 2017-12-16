@@ -76,6 +76,6 @@ function writePosts(postsJson) {
     // </div>`;
   }
 
-  var items = document.getElementById("items");
-  items.innerHTML = posts;
+  // var items = document.getElementById("items");
+  // items.innerHTML = posts;
 }
