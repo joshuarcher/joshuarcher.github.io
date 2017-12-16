@@ -6,6 +6,16 @@ function timeAgo(timestamp) {
 
 function fetchPosts() {
 
+  // var xhr = new XMLHttpRequest();
+  // xhr.overrideMimeType("application/json");
+  // xhr.open('GET', 'sample.json', true);
+  // xhr.onreadystatechange = function () {
+  //   if (xhr.readyState == 4 && xhr.status == 200) {
+  //     var posts = JSON.parse(xhr.responseText);
+  //     writePosts(posts);
+  //   }
+  // };
+  // xhr.send(null);
   var xhr = new XMLHttpRequest();
   console.log("fetching");
   xhr.onreadystatechange = function () {
@@ -59,7 +69,6 @@ function writePosts(postsJson) {
     titleSpan.appendChild(titleLink);
 
     listItemTop.appendChild(titleSpan);
-
     listItem.appendChild(listItemTop);
 
     var listItemBottom = document.createElement("div");
