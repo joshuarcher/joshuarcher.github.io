@@ -18,7 +18,7 @@ function timeAgo(timestamp) {
   return hours + " hours ago";
 }
 
-function fetchPosts() {
+function fetch() {
 
   var xhr = new XMLHttpRequest();
   console.log("fetching");
