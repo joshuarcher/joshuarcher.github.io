@@ -72,7 +72,7 @@ function writePosts(postsJson) {
     listItem.appendChild(listItemTop);
 
     var listItemBottom = document.createElement("div");
-    listItemTop.className = "listItemBottom";
+    listItemBottom.className = "listItemBottom";
 
     var pointsSpan = document.createElement("span");
     pointsSpan.className = "listLink";
