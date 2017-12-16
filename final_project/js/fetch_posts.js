@@ -6,16 +6,6 @@ function timeAgo(timestamp) {
 
 function fetchPosts() {
 
-  // var xhr = new XMLHttpRequest();
-  // xhr.overrideMimeType("application/json");
-  // xhr.open('GET', 'sample.json', true);
-  // xhr.onreadystatechange = function () {
-  //   if (xhr.readyState == 4 && xhr.status == 200) {
-  //     var posts = JSON.parse(xhr.responseText);
-  //     writePosts(posts);
-  //   }
-  // };
-  // xhr.send(null);
   var xhr = new XMLHttpRequest();
   console.log("fetching");
   xhr.onreadystatechange = function () {
@@ -24,7 +14,6 @@ function fetchPosts() {
       var posts = JSON.parse(xhr.responseText);
 
       writePosts(posts);
-      // console.log(result);
     }
   }
 
@@ -103,32 +92,6 @@ function writePosts(postsJson) {
     listItem.appendChild(listItemBottom);
 
     document.getElementById("items").appendChild(listItem);
-
-    // `
-    // <div class="listItem">
-    //   <div class="listItemTop">
-    //     <span class="rank">1.</span>
-    //     <span id="up_123456" class="upvote">
-    //       <a href="#">
-    //         <svg height="10" width="10">
-    //           <polygon points="10,10 5,0 0,10" style="fill:#555;" />
-    //         </svg>
-    //       </a>
-    //     </span>
-    //     <span class="title">
-    //       <a href="#link">Overcoming Us vs. Them</a>
-    //     </span>
-    //   </div>
-    //   <div class="listItemBottom">
-    //     <span class="listLink">115 points</span> |
-    //     <span class="listLink">2 hours ago</span> |
-    //     <span class="listLink" onclick="hide">
-    //       <a href="#">hide</a>
-    //     </span>
-    //   </div>
-    // </div>`;
   }
 
-  // var items = document.getElementById("items");
-  // items.innerHTML = posts;
 }
