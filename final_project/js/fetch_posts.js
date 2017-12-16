@@ -21,6 +21,7 @@ function writePosts(postsJson) {
   var i = 0;
   for (var index in posts) {
     console.log(posts[index]);
+    var post = JSON.parse(posts[index]);
     i++;
 
     var listItem = document.createElement("div");
@@ -49,8 +50,8 @@ function writePosts(postsJson) {
     listItemTop.appendChild(titleSpan);
 
     var titleLink = document.createElement("a");
-    titleLink.href = posts[index].url;
-    titleLink.innerHTML = posts[index].title;
+    titleLink.href = post.url;
+    titleLink.innerHTML = post.title;
     titleSpan.appendChild(titleLink);
 
     document.getElementById("items").appendChild(listItem);
