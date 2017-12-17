@@ -51,4 +51,6 @@ $timestamp = $date->getTimestamp();
 $sql = "INSERT INTO $table ($field1, $field2, $field3, $field4, $field5) VALUES ('$title','$url','$text',$upvoteCount,$timestamp)";
 $result = $db->query($sql);
 
+header('Location: ./../site_index.html');
+
 ?>
