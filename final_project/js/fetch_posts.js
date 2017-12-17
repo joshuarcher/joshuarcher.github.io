@@ -20,7 +20,7 @@ function timeAgo(timestamp) {
     return "1 hour ago";
   }
 
-  return hours + " hours ago";
+  return diffHours + " hours ago";
 }
 
 function fetch() {
