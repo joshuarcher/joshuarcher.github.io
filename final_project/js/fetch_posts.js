@@ -23,7 +23,7 @@ function saveCookie(timestamp) {
 
   var cookie = document.cookie;
 
-  if (!cookie) {}
+  if (!cookie) {
     document.cookie = "timestamps=" + timestamp + ";" + "expires=" + da.toGMTString();
     return;
   }
