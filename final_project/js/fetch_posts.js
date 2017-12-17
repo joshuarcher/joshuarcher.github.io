@@ -1,3 +1,50 @@
+function upvote(timestamp) {
+  // make ajax call
+  // store cookie for upvoted
+  // refresh page
+
+  var xhr = new XMLHttpRequest();
+  console.log("fetching");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      saveCookie(timestamp);
+      fetch();
+    }
+  }
+
+  xhr.open("POST", "./php/upvote_post.php?timestamp=" + timestamp);
+  xhr.send(null);
+}
+
+function saveCookie(timestamp) {
+
+  var da = new Date();
+  da.setTime(da.getTime() + (365*60000));
+
+  var cookie = document.cookie;
+
+  if (!cookie) {}
+    document.cookie = "timestamps=" + timestamp + ";" + "expires=" + da.toGMTString();
+    return;
+  }
+
+  var firstCookie = cookie.split(";")[0];
+
+  if (!firstCookie) {
+    return;
+  }
+
+  var timeStamps = firstCookie.split("=")[1].split(",");
+
+  if (!timeStamps) {
+    return;
+  }
+
+  timeStamps.push(timestamp);
+
+  document.cookie = "timestamps=" + timeStamps.join(",") + ";" + "expires=" + da.toGMTString();
+}
+
 function timeAgo(timestamp) {
 
   var diffSeconds = Math.floor(Date.now() / 1000) - timestamp;
@@ -33,6 +80,28 @@ function fetch() {
 
   xhr.open("GET", "./php/fetch_posts.php");
   xhr.send(null);
+}
+
+function hideUpvotes() {
+  var cookie = document.cookie;
+
+  if (!cookie) {}
+    return;
+  }
+
+  var firstCookie = cookie.split(";")[0];
+
+  if (!firstCookie) {
+    return;
+  }
+
+  var timeStamps = firstCookie.split("=")[1].split(",");
+
+  for (var i=0; i < timeStamps.length; i++) {
+    var someId = "up_" + timeStamps[i];
+    var element = document.getElementById(someId);
+    element.style.visibility = "hidden";
+  }
 }
 
 function writePosts(postsJson) {
@@ -109,6 +178,8 @@ function writePosts(postsJson) {
     listItem.appendChild(listItemBottom);
 
     document.getElementById("items").appendChild(listItem);
+
+    hideUpvotes();
   }
 
 }
