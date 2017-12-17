@@ -85,7 +85,7 @@ function fetch() {
 function hideUpvotes() {
   var cookie = document.cookie;
 
-  if (!cookie) {}
+  if (!cookie) {
     return;
   }
 
