@@ -100,7 +100,10 @@ function hideUpvotes() {
   for (var i=0; i < timeStamps.length; i++) {
     var someId = "up_" + timeStamps[i];
     var element = document.getElementById(someId);
-    element.style.visibility = "hidden";
+
+    if (element) {
+        element.style.visibility = "hidden";
+    }
   }
 }
 
