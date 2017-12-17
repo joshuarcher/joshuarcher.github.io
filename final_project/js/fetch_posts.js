@@ -1,7 +1,3 @@
-function upvote(timestamp) {
-
-}
-
 function timeAgo(timestamp) {
 
   var diffSeconds = Math.floor(Date.now() / 1000) - timestamp;
@@ -9,7 +5,6 @@ function timeAgo(timestamp) {
   var diffHours = Math.floor(diffMinutes / 60);
 
   if (diffHours < 1) {
-    // var minutes = Math.floor(diff / 60);
     if (diffMinutes < 1) {
       return "less than a minute ago";
     } else if (diffMinutes == 1) {
