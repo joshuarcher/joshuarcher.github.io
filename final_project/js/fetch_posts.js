@@ -110,6 +110,8 @@ function hideUpvotes() {
 function writePosts(postsJson) {
   var posts = postsJson["posts"];
   var i = 0;
+
+  document.getElementById("items").innerHTML = "";
   for (var index in posts) {
     var post = JSON.parse(posts[index]);
     i++;
